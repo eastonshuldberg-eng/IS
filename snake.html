@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Snake Game – Diet Dr Pepper Edition</title>
+<style>
+  body {
+    background: #f4f4f4;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    margin-top: 20px;
+    color: #444;
+  }
+  canvas {
+    background: #e6e6e6;
+    display: block;
+    margin: 20px auto;
+    border: 5px solid #bbb;
+  }
+</style>
+</head>
+<body>
+<h1>Snake Game – Diet Dr Pepper Edition</h1>
+<p>Controls: Arrow Keys — Press ANY key to restart after game over</p>
+
+<canvas id="gameCanvas" width="400" height="400"></canvas>
+
+<audio id="bgm" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9a40b52bb3.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+const bgm = document.getElementById("bgm");
+
+let box = 20;
+let snake, food, direction, score, highScore, gameOver = false;
+
+// Add Diet Dr Pepper can image
+const foodImg = new Image();
+foodImg.src = "https://upload.wikimedia.org/wikipedia/commons/4/4c/Diet_Dr_Pepper_can.png";
+
+function initGame() {
+  snake = [{ x: 10 * box, y: 10 * box }];
+  direction = "RIGHT";
+  score = 0;
+  highScore = localStorage.getItem("highScore") || 0;
+  generateFood();
+  gameOver = false;
+  bgm.play().catch(() => {});
+}
+
+function generateFood() {
+  food = {
+    x: Math.floor(Math.random() * 20) * box,
+    y: Math.floor(Math.random() * 20) * box,
+  };
+}
+
+// Movement controls
+
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  if (gameOver) {
+    startGame();
+    return;
+  }
+
+  if (key === "ArrowUp" && direction !== "DOWN") direction = "UP";
+  else if (key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+  else if (key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
+  else if (key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+});
+
+function draw() {
+  ctx.fillStyle = "#e6e6e6";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.drawImage(foodImg, food.x, food.y, box, box);
+
+  for (let i = 0; i < snake.length; i++) {
+    ctx.fillStyle = i === 0 ? "#7ecb20" : "#a8e063";
+    ctx.fillRect(snake[i].x, snake[i].y, box, box);
+  }
+
+  let snakeX = snake[0].x;
+  let snakeY = snake[0].y;
+
+  if (direction === "LEFT") snakeX -= box;
+  if (direction === "RIGHT") snakeX += box;
+  if (direction === "UP") snakeY -= box;
+  if (direction === "DOWN") snakeY += box;
+
+  if (snakeX === food.x && snakeY === food.y) {
+    score++;
+    generateFood();
+  } else {
+    snake.pop();
+  }
+
+  const newHead = { x: snakeX, y: snakeY };
+
+  if (
+    snakeX < 0 ||
+    snakeY < 0 ||
+    snakeX >= canvas.width ||
+    snakeY >= canvas.height ||
+    collision(newHead, snake)
+  ) {
+    clearInterval(game);
+    gameOver = true;
+    if (score > highScore) {
+      localStorage.setItem("highScore", score);
+    }
+    return;
+  }
+
+  snake.unshift(newHead);
+
+  ctx.fillStyle = "#444";
+  ctx.font = "18px Arial";
+  ctx.fillText("Score: " + score, 10, 20);
+  ctx.fillText("High Score: " + localStorage.getItem("highScore"), 10, 40);
+}
+
+function collision(head, array) {
+  return array.some(part => head.x === part.x && head.y === part.y);
+}
+
+function startGame() {
+  initGame();
+  clearInterval(game);
+  game = setInterval(draw, 100);
+}
+
+startGame();
+</script>
+</body>
+</html>

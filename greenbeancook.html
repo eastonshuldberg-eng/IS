@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Options: When to Buy & Sell — Practical Insights</title>
+<style>
+  :root{
+    --bg:#f6f7f9;
+    --card:#ffffff;
+    --accent:#2b6f9e;
+    --muted:#51606a;
+    --border:2px solid rgba(43,111,158,0.12);
+    --radius:10px;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  body{background:linear-gradient(180deg,#fbfdff 0%,var(--bg) 100%); margin:0; color:#123; -webkit-font-smoothing:antialiased;}
+  .page{max-width:1100px;margin:32px auto;padding:20px;}
+  header{display:flex;align-items:center;gap:18px;margin-bottom:18px;}
+  .logo{width:72px;height:72px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;background:linear-gradient(135deg,var(--accent),#4fa3c7);box-shadow:0 8px 20px rgba(16,24,40,0.06);border:var(--border);}
+  h1{margin:0;font-size:1.6rem;}
+  p.lead{margin:0;color:var(--muted);}
+
+  .grid{display:grid;grid-template-columns: 1fr 320px;gap:20px;}
+  @media(max-width:960px){ .grid{grid-template-columns:1fr;} }
+
+  .card{background:var(--card);border-radius:var(--radius);padding:18px;border:var(--border);box-shadow:0 10px 28px rgba(16,24,40,0.05);}
+
+  h2{margin-top:0;color:var(--accent);}
+  h3{margin:0 0 8px 0;color:#1f4a63;}
+
+  .box{border:var(--border);border-radius:8px;padding:12px;background:#fff;margin-bottom:12px;}
+  ul{margin:8px 0 0 1.1rem;color:var(--muted);}
+  ol{margin:8px 0 0 1.1rem;color:var(--muted);}
+
+  .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(43,111,158,0.08);border:var(--border);font-weight:600;color:var(--accent);}
+
+  .metric{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;}
+  .metric div{background:#fbfcff;padding:8px;border-radius:8px;border:var(--border);}
+
+  /* clickable tables on the aside */
+  aside .table{width:100%;border-collapse:collapse;}
+  aside td{padding:10px;border:1px solid #e4edf3;background:#fbfeff;cursor:pointer;}
+  aside td:hover{background:#eef7fb;}
+
+  footer{margin-top:26px;padding:18px;text-align:center;border-top:var(--border);color:var(--muted);}
+
+  a.link{color:var(--accent);font-weight:700;text-decoration:none;}
+  .disclaimer{background:#fff3f2;border:var(--border);padding:12px;border-radius:8px;color:#6b2f2f;margin-bottom:12px;}
+  code.small{background:#f3f6f8;padding:2px 6px;border-radius:6px;border:1px solid #e3eef7;font-family:monospace;font-size:0.9rem;display:inline-block;}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">OPT</div>
+      <div>
+        <h1>Options: Practical Insights — When to Buy & When to Sell</h1>
+        <p class="lead">High-level principles, key indicators, strategies, and risk-management ideas for options traders.</p>
+      </div>
+    </header>
+
+    <div class="disclaimer card">
+      <strong>Important:</strong> This page is educational only and not financial advice. Options are complex and risky; consider consulting a licensed advisor and read exchange & regulator guidance before trading. See resources at the bottom.
+    </div>
+
+    <div class="grid">
+      <!-- left content -->
+      <main class="card">
+        <section class="box" id="principles">
+          <h2>Core principles</h2>
+          <ul>
+            <li><strong>Options = time + volatility + direction.</strong> An option's price is driven by the underlying's price, time to expiration, and implied volatility (IV). Learn to read IV — buying when IV is low and selling when IV is high is a fundamental approach.</li>
+            <li><strong>The Greeks matter.</strong> Delta (directional exposure), Theta (time decay), Vega (volatility sensitivity) and Gamma (delta acceleration) help decide which contracts and expirations fit your thesis.</li>
+            <li><strong>Liquidity & spreads.</strong> Trade liquid tickers and strikes with tight bid/ask spreads to reduce execution cost and slippage.</li>
+          </ul>
+        </section>
+
+        <section class="box" id="buy-when">
+          <h2>When to consider buying options</h2>
+          <ol>
+            <li><strong>Low implied volatility vs historical volatility:</strong> If IV is low relative to the stock's typical IV or compared to historical volatility, calls/puts are cheaper — buying can be advantageous when you expect volatility to rise or a directional move to happen. <span style="color:var(--muted)">(buy long calls if bullish; long puts if bearish; consider long-dated OTM calls for large upside scenarios).</span></li>
+            <li><strong>Upcoming, known catalysts:</strong> If you anticipate a specific event (earnings, FDA decision, macro release) and IV is not already elevated, buying a call/put or a volatility strategy can profit from a big move.</li>
+            <li><strong>Time horizon fits Theta:</strong> Buy options with enough time to allow your thesis to play out — avoid very short-dated options unless you're expecting an imminent move.</li>
+            <li><strong>Asymmetric payoff needs:</strong> Buy options when you want limited downside (premium paid) with large upside potential (e.g., long calls on a breakout idea).</li>
+          </ol>
+        </section>
+
+        <section class="box" id="sell-when">
+          <h2>When to consider selling options (collecting premium)</h2>
+          <ol>
+            <li><strong>High implied volatility:</strong> When IV is rich relative to history or ahead of a sell-off, options are expensive — selling premium (covered calls, credit spreads, iron condors) can be attractive because you collect elevated premiums.</li>
+            <li><strong>Range-bound expectations:</strong> If you expect the underlying to trade sideways until expiration, premium-selling strategies that benefit from Theta (time decay) can win.</li>
+            <li><strong>Skew opportunities:</strong> Volatility skew (different IV by strike) can make some strikes more attractive to sell; for example, extreme tail puts often carry higher IV.</li>
+            <li><strong>Defined-risk preference:</strong> Prefer credit spreads or butterflies instead of naked shorts to cap potential losses while collecting premium.</li>
+          </ol>
+        </section>
+
+        <section class="box" id="strategy-examples">
+          <h2>Strategy examples (match market view to structure)</h2>
+          <div class="box">
+            <h3>Bullish & cheap IV</h3>
+            <p>Long call or call debit spread — limited loss, leveraged upside.</p>
+          </div>
+          <div class="box">
+            <h3>Bearish & IV low</h3>
+            <p>Long put or put spread — benefits from downside move with controlled risk.</p>
+          </div>
+          <div class="box">
+            <h3>High IV & neutral</h3>
+            <p>Credit spreads, iron condors, or selling calendar premium — collect elevated premium with defined risk controls.</p>
+          </div>
+          <div class="box">
+            <h3>Event play</h3>
+            <p>Long straddle/strangle around an anticipated large move if IV is reasonable; or buy cheap long-dated OTM options if seeking asymmetric long-term upside.</p>
+          </div>
+        </section>
+
+        <section class="box" id="risk">
+          <h2>Risk management & execution checklist</h2>
+          <ul>
+            <li>Use position sizing — risk a small % of capital per trade.</li>
+            <li>Pick liquid expirations & strikes (tight bid/ask, decent open interest).</li>
+            <li>Monitor Greeks: know how Theta and Vega will affect your P&L over time.</li>
+            <li>Plan exits: set target, stop, or rules to roll/adjust positions.</li>
+            <li>Be mindful of assignment risk on short options (especially near expiration and in options exercised scenarios).</li>
+          </ul>
+        </section>
+
+        <section class="box" id="tools">
+          <h2>Tools & data to watch</h2>
+          <ul>
+            <li>Implied volatility charts and IV rank/percentile for a ticker.</li>
+            <li>Historical volatility (HV) vs implied volatility (IV) comparison.</li>
+            <li>Option chain liquidity (bid/ask, mid, open interest).</li>
+            <li>Simple Greeks monitor (delta, theta, vega) for planned expirations.</li>
+          </ul>
+        </section>
+
+        <section class="box" id="learn-more">
+          <h2>Learn more & reputable references</h2>
+          <p>Further reading from regulators and market educators is essential. See the reference list at the bottom for official guides on options basics, implied volatility, the Greeks, skew, and suggested strategies.</p>
+        </section>
+      </main>
+
+      <!-- aside -->
+      <aside>
+        <div class="card">
+          <h3>Quick jump (click)</h3>
+          <table class="table" onclick="/* nothing */">
+            <tr><td onclick="document.getElementById('principles').scrollIntoView({behavior:'smooth'})">Core principles</td></tr>
+            <tr><td onclick="document.getElementById('buy-when').scrollIntoView({behavior:'smooth'})">When to buy</td></tr>
+            <tr><td onclick="document.getElementById('sell-when').scrollIntoView({behavior:'smooth'})">When to sell</td></tr>
+            <tr><td onclick="document.getElementById('strategy-examples').scrollIntoView({behavior:'smooth'})">Strategy examples</td></tr>
+            <tr><td onclick="document.getElementById('risk').scrollIntoView({behavior:'smooth'})">Risk controls</td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>Quick metrics</h3>
+          <div class="metric">
+            <div><strong>IV Rank:</strong><div style="font-size:0.9rem;color:var(--muted)">Compare current IV to its past range</div></div>
+            <div><strong>IV Percentile:</strong><div style="font-size:0.9rem;color:var(--muted)">How often IV was lower historically</div></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>External links</h3>
+          <p style="margin:6px 0"><a class="link" href="https://www.sec.gov/resources-for-investors/investor-alerts-bulletins/ib_introductionoptions" target="_blank" rel="noopener noreferrer">SEC: Intro to options</a></p>
+          <p style="margin:6px 0"><a class="link" href="https://www.investopedia.com/terms/i/iv.asp" target="_blank" rel="noopener noreferrer">Investopedia: Implied Volatility</a></p>
+          <p style="margin:6px 0"><a class="link" href="https://optionsfacts.cboe.com/" target="_blank" rel="noopener noreferrer">Cboe Options Facts</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div style="max-width:900px;margin:0 auto;">
+        <div style="margin-bottom:8px;">Contact: <a class="link" href="mailto:info@example.com">info@example.com</a> • Educational content only</div>
+        <div style="font-size:0.9rem;color:var(--muted);text-align:left;">
+          <strong>References / further reading:</strong>
+          <ol>
+            <li id="ref1">SEC — Introduction to options and basics.</li>
+            <li id="ref2">Investopedia — Implied volatility and IV strategies.</li>
+            <li id="ref3">Investopedia — The Greeks and how they affect option prices.</li>
+            <li id="ref4">Tastytrade/TastyLive — Volatility skew and term structure concepts.</li>
+            <li id="ref5">Cboe — Practical articles/strategies and options facts.</li>
+          </ol>
+        </div>
+      </div>
+    </footer>
+  <div class='tableauPlaceholder' id='viz1765406185933' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;To&#47;TotalAnnualLossofBeeColoniesintheUS&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='TotalAnnualLossofBeeColoniesintheUS&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;To&#47;TotalAnnualLossofBeeColoniesintheUS&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='_gl=1*h7xjk8*_ga*MTgxNDIzMjA0Ny4xNzYyMjExOTc3*_ga_8YLN0SNXVS*czE3NjU0MDYxMDAkbzUkZzAkdDE3NjU0MDYxMDAkajYwJGwwJGgw*_gcl_au*MTIwMzU0MTA2LjE3NjIyMTE5NzcuMTYzOTIyNDg2OC4xNzYyMjExOTg4LjE3NjIyMTE5ODc.' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1765406185933');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1000px';vizElement.style.height='827px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+  <script>
+    // small nicety: allow table cell clicks to focus sections (for mobile accessibility)
+    document.querySelectorAll('aside td').forEach(td=>{
+      td.addEventListener('keydown', e=>{ if(e.key==='Enter') td.click(); });
+    });
+  </script>
+</body>
+</html>

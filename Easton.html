@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Professional Portfolio — Easton Shuldberg</title>
+
+  <!-- Bootstrap 5.3 (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#0d6efd;
+      --muted:#6c757d;
+      --card-bg:#ffffff;
+      --page-bg:#f7f9fc;
+    }
+
+    html,body{height:100%}
+    body{
+      background:var(--page-bg);
+      color:#212529;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .hero{background:linear-gradient(180deg, rgba(13,110,253,0.06), transparent);}
+    .profile-avatar{width:120px;height:120px;border-radius:18px;object-fit:cover;border:4px solid white;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .resume-section{background:var(--card-bg);border-radius:12px;padding:1.25rem;box-shadow:0 6px 18px rgba(15,15,15,0.04)}
+    .skill-badge{margin:.15rem .25rem .15rem 0}
+    a.no-decor{text-decoration:none;color:inherit}
+    a:focus, button:focus{outline:3px solid rgba(13,110,253,.25);outline-offset:2px}
+    @media print{
+      body{background:white}
+      nav, .btn, .social {display:none}
+      .resume-section{box-shadow:none}
+    }
+
+    /* Small responsive tweaks */
+    @media (max-width:767.98px){
+      .profile-avatar{width:96px;height:96px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Easton Shuldberg</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume">Résumé</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero py-5">
+    <div class="container">
+      <div class="d-flex gap-4 align-items-center flex-wrap">
+        <div class="bg-white p-2 rounded-3">
+          <!-- Inline SVG avatar to avoid external images -->
+          <div class="bg-white p-2 rounded-3">
+  <img src="images/easton-football.jpg"
+       alt="Football photo of Easton"
+       class="profile-avatar"
+       style="object-fit: cover;">
+</div>
+
+        </div>
+
+        <div class="flex-grow-1 min-w-0">
+          <h1 class="h3 mb-1 text-truncate">Easton Shuldberg <small class="fs-sm text-muted d-block">Current Student</small></h1>
+          <p class="mb-1 text-muted">Hard-working student with an excellent work ethic; pursuing a B.S. in Exercise Science and a Business minor at BYU as a Pre-PT student.</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-outline-primary btn-sm" href="#resume">View Résumé</a>
+            <a class="btn btn-primary btn-sm" href="#contact">Contact</a>
+            <a class="btn btn-sm btn-light" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5" id="top">
+    <section id="about" class="mb-4">
+      <div class="resume-section d-flex flex-column flex-md-row gap-4 align-items-center">
+        <div class="flex-grow-1">
+          <h2 class="h5">About</h2>
+          <p class="text-muted mb-2">I have worked and shadowed physical therapists across multiple states. I am currently pursuing a minor in Business at Brigham Young University to broaden my perspective as a future Physical Therapist.</p>
+          <ul class="list-inline mb-0 small text-muted">
+            <li class="list-inline-item"><strong>Email:</strong> <a href="mailto:eastonjs@byu.edu">eastonjs@byu.edu</a></li>
+            <li class="list-inline-item">&middot;</li>
+            <li class="list-inline-item"><strong>Location:</strong> Provo, Utah</li>
+          </ul>
+        </div>
+
+        <div class="text-md-end">
+          <div class="social small">
+            <a class="me-2" href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <span class="mx-1 text-muted">|</span>
+            <a class="me-2" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="mb-4">
+      <h2 class="h5 mb-3">Résumé</h2>
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="resume-section">
+            <h3 class="h6">Work Experience</h3>
+
+            <article class="mt-3">
+              <h4 class="mb-0">Fyzical Therapy and Balance Centers</h4>
+              <div class="text-muted small">September 2025 — Present · Orem, Utah</div>
+              <ul class="mt-2">
+                <li>Assist in various treatments such as electrical stimulation, massage therapy, and stretches.</li>
+                <li>Support clinicians in patient setup and outcome measure collection.</li>
+              </ul>
+            </article>
+
+            <article class="mt-3">
+              <h4 class="mb-0">Dental Assistant</h4>
+              <div class="text-muted small">May 2022 – October 2022 · Fort Worth, Texas</div>
+              <ul class="mt-2">
+                <li>Assisted during dental procedures and managed sterilization protocols.</li>
+              </ul>
+            </article>
+
+            <hr>
+
+            <h3 class="h6 mt-3">Education</h3>
+            <div class="mt-2">
+              <strong>B.S. Exercise Science</strong>, Brigham Young University — <span class="text-muted">2022 – Present</span>
+            </div>
+
+            <hr>
+
+            <h3 class="h6 mt-3">Awards & Honors</h3>
+            <ul class="mt-2">
+              <li>First Team All-State Football — Timber Creek High School (2022)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="resume-section">
+            <h3 class="h6">Skills</h3>
+            <div class="mt-2 mb-2">
+              <span class="badge bg-light text-dark skill-badge">CPR</span>
+              <span class="badge bg-light text-dark skill-badge">TENS</span>
+              <span class="badge bg-light text-dark skill-badge">Certified Phlebotomy Technician</span>
+            </div>
+
+            <hr>
+
+            <h3 class="h6 mt-3">Languages</h3>
+            <ul class="small text-muted mb-0">
+              <li>English (native)</li>
+              <li>Spanish (professional)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="mb-4">
+      <h2 class="h5 mb-3">Projects & Shadowing</h2>
+      <div class="resume-section">
+        <p class="mb-1 text-muted small">List clinics shadowed, research projects, volunteering, or other relevant experiences here. If you'd like, I can help format a project list or add downloadable PDF links.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="mb-5">
+      <h2 class="h5 mb-3">Contact</h2>
+      <div class="resume-section d-flex flex-column flex-md-row gap-4">
+        <div class="flex-grow-1">
+          <p class="text-muted">Interested in working together? Drop a note and include a short description of the role or project.</p>
+
+          <!-- mailto form: opens user's email client. -->
+          <form action="mailto:eastonjs@byu.edu" method="post" enctype="text/plain" class="row g-2" onsubmit="return validateContactForm(this);">
+            <div class="col-12">
+              <label class="form-label small" for="name">Name</label>
+              <input id="name" name="Name" type="text" class="form-control form-control-sm" required>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label small" for="email">Email</label>
+              <input id="email" name="Email" type="email" class="form-control form-control-sm" required>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label small" for="subject">Subject</label>
+              <input id="subject" name="Subject" type="text" class="form-control form-control-sm">
+            </div>
+
+            <div class="col-12">
+              <label class="form-label small" for="message">Message</label>
+              <textarea id="message" name="Message" class="form-control form-control-sm" rows="4" required></textarea>
+            </div>
+
+            <div class="col-12 text-end">
+              <button type="submit" class="btn btn-primary btn-sm">Send</button>
+            </div>
+          </form>
+        </div>
+
+        <aside style="min-width:200px">
+          <div class="resume-section mb-3">
+            <h6 class="mb-2">Quick Info</h6>
+            <p class="small text-muted mb-1"><strong>Email:</strong> <a href="mailto:eastonjs@byu.edu">eastonjs@byu.edu</a></p>
+            <p class="small text-muted mb-1"><strong>Phone:</strong> 817-932-3768</p>
+            <p class="small text-muted mb-0"><strong>Availability:</strong> Open for internships / part-time roles</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white border-top py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <small class="text-muted">© <span id="year"></span> Easton Shuldberg — Built with Bootstrap</small>
+      <div>
+        <a href="#" class="me-2 small">Privacy</a>
+        <a href="#" class="small">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple client-side validation for the mailto form (prevents blank submit)
+    function validateContactForm(form){
+      var name = form.Name.value.trim();
+      var email = form.Email.value.trim();
+      var msg  = form.Message.value.trim();
+      if(!name || !email || !msg){
+        alert('Please complete Name, Email, and Message before sending.');
+        return false;
+      }
+      // let mailto handle sending
+      return true;
+    }
+  </script>
+</body>
+</html>
